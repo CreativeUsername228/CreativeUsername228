@@ -1,12 +1,12 @@
 body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    background-color: #fce4ec; /* Nuanța de roz din imagine */
+    background-color: #fce4ec;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
     margin: 0;
-    overflow: hidden; /* Să nu apară scroll din cauza inimioarelor */
+    overflow: hidden;
 }
 
 #app {
@@ -14,11 +14,11 @@ body {
     width: 100%;
     max-width: 400px;
     padding: 20px;
-    z-index: 10; /* Să stea peste inimioare */
+    z-index: 10;
 }
 
 h2 {
-    color: #5d4037; /* Culoare caldă, text închis */
+    color: #5d4037;
     font-weight: 500;
     margin-bottom: 25px;
 }
@@ -30,11 +30,11 @@ h2 {
 }
 
 .btn {
-    background-color: #f8bbd0; /* Rozul butoanelor din imagine */
+    background-color: #f8bbd0;
     color: #4a4a4a;
     border: none;
     padding: 12px 0;
-    border-radius: 20px; /* Butoane rotunjite/pill */
+    border-radius: 20px;
     cursor: pointer;
     font-weight: 500;
     transition: background-color 0.2s;
@@ -63,7 +63,14 @@ h2 {
     color: #4a4a4a;
 }
 
-/* Inimioare plutitoare */
+.scrisoare-text {
+    text-align: left;
+    color: #444;
+    line-height: 1.5;
+    font-size: 16px;
+}
+
+/* Inimioare */
 .heart {
     position: absolute;
     bottom: -50px;
@@ -79,55 +86,12 @@ h2 {
     to { transform: translateY(-110vh); opacity: 0; }
 }
 
-/* Calendar Container */
+/* Calendar */
 .calendar-wrapper {
     background: rgba(255, 255, 255, 0.5);
     border-radius: 20px;
     padding: 15px;
     margin-bottom: 20px;
-}
-
-.calendar-grid {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    gap: 5px;
-    margin-top: 10px;
-}
-
-.day-btn {
-    padding: 10px 5px;
-    border: none;
-    background: #fce4ec;
-    border-radius: 10px;
-    cursor: pointer;
-    font-size: 14px;
-    transition: 0.3s;
-}
-
-.day-btn.selected {
-    background: #f8bbd0;
-    font-weight: bold;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-
-.time-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
-    margin-top: 15px;
-}
-
-.time-btn {
-    padding: 8px;
-    border: none;
-    background: #fce4ec;
-    border-radius: 10px;
-    cursor: pointer;
-}
-
-.time-btn.selected {
-    background: #f8bbd0;
-    font-weight: bold;
 }
 
 .cal-nav {
@@ -178,12 +142,27 @@ h2 {
     font-weight: bold;
 }
 
-.day-btn.empty {
-    background: transparent;
-    cursor: default;
+.time-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
 }
 
-/* Player Stil - Compact și modern */
+.time-btn {
+    padding: 8px;
+    border: none;
+    background: #fce4ec;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.time-btn.selected {
+    background: #f48fb1;
+    color: white;
+    font-weight: bold;
+}
+
+/* Player Muzică */
 .music-player {
     position: fixed;
     top: 20px;
