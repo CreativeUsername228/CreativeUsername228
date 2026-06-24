@@ -169,4 +169,55 @@ function ecranPlanificare() {
     container.append(wrapper, timeGrid, document.createElement('br'), select, btnConfirm);
 }
 
+// CONFIGURARE PLAYLIST (Aici adaugi/schimbi melodiile)
+const playlist = [
+    { title: "Somewhere I Belong", file: "somewhere-i-belong.mp3" },
+    { title: "1500", file: "1500.mp3" },
+    { title: "Everlong", file: "everlong.mp3" },
+    { title: "From The Inside", file: "fromtheinside.mp3" },
+    { title: "Given Up", file: "givenup.mp3" },
+    { title: "Лето, плавки, рок-н-ролл", file: "leto_plavki.mp3" },
+    { title: "Numb", file: "numb.mp3" },
+    { title: "Ploile nu vin", file: "ploile.mp3" },
+    { title: "Melodia 9", file: "melodia9.mp3" },
+    { title: "Melodia 10", file: "melodia10.mp3" }
+];
+
+let currentSongIndex = 0;
+const audio = document.getElementById("myAudio");
+const playBtn = document.getElementById("playBtn");
+const titleDisplay = document.getElementById("songTitle");
+
+function loadSong(index) {
+    audio.src = playlist[index].file;
+    titleDisplay.textContent = playlist[index].title;
+}
+
+playBtn.onclick = () => {
+    if (audio.paused) {
+        audio.play();
+        playBtn.textContent = "⏸️";
+    } else {
+        audio.pause();
+        playBtn.textContent = "▶️";
+    }
+};
+
+document.getElementById("nextBtn").onclick = () => {
+    currentSongIndex = (currentSongIndex + 1) % playlist.length;
+    loadSong(currentSongIndex);
+    audio.play();
+    playBtn.textContent = "⏸️";
+};
+
+document.getElementById("prevBtn").onclick = () => {
+    currentSongIndex = (currentSongIndex - 1 + playlist.length) % playlist.length;
+    loadSong(currentSongIndex);
+    audio.play();
+    playBtn.textContent = "⏸️";
+};
+
+// Încărcăm prima melodie la start
+loadSong(0);
+
 render();
